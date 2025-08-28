@@ -1,21 +1,22 @@
-export class Personagem{
-    nome:string ;
-    classe:string 
-    raca: string 
-    nivel:number ;
-    arma: string 
-    manaAtual: number ;
-    manaMaxima: number ;
-    vidaAtual: number ;
-    vidaMaxima: number ;
-    agilidade: number ;
-    poderAtaque: number ;
+import { Util } from "./Util";
+export class Personagem {
+    nome: string;
+    classe: string
+    raca: string
+    nivel: number;
+    arma: string
+    manaAtual: number;
+    manaMaxima: number;
+    vidaAtual: number;
+    vidaMaxima: number;
+    agilidade: number;
+    poderAtaque: number;
 
-    constructor(nome: string){
+    constructor(nome: string) {
         this.nome = nome;
         this.classe = "";
-        this.raca = ""; 
-        this.nivel = 0; 
+        this.raca = "";
+        this.nivel = 0;
         this.arma = "";
         this.manaAtual = 0;
         this.manaMaxima = 0;
@@ -24,8 +25,11 @@ export class Personagem{
         this.agilidade = 0;
         this.poderAtaque = 0;
     }
+
+    treinarPoderAtaque(): void {
+        const util: Util = new Util();
+        const incrementoDoTreino : number = Util.gerarNumeroAleatoria(5, 15);
+        this.poderAtaque += incrementoDoTreino + this.poderAtaque * 1.1;
+    }
     
- treinarPoderAtaque(): void{
-    this.poderAtaque += 3 + this.poderAtaque * 1.1;
-}
 }
