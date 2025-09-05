@@ -17,5 +17,5 @@ for (let index = 0; index < 10; index++) {
     const nome = Util.gerarNome();
     const email = faker.internet.email({ firstName: nome });
     faker.food.meat()
-
+    
 }
